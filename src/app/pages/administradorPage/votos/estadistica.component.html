@@ -1,0 +1,90 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 text-center mb-4">
+      <h2 style="color: black;">MINADO BLOCKCHAIN</h2>
+    </div>
+  </div>
+
+  <div *ngIf="bloqueAlterado" class="alert alert-warning" role="alert">
+    ¡Advertencia! La red Blockchain ha sido alterada en los bloques:
+    <span *ngFor="let index of bloqueAlteradoIndex; let last = last">
+      #{{ index }}{{ last ? '' : ', ' }}
+    </span>.
+  </div>
+  
+  <!-- Botón para simular la alteración de bloques -->
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="row justify-content-end mt-3">
+        <button class="btn btn-danger rounded-pill" (click)="OnClicksimularAlteracionBloque([2, 3, 5])">Simular Alteración</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Botón para descargar bloques alterados -->
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="row justify-content-end mt-3">
+        <button *ngIf="mostrarBotonDescarga" class="btn btn-primary rounded-pill ml-2" (click)="descargarBloquesAlterados()">Descargar Bloques Alterados</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="row justify-content-end mt-3">
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row justify-content-center mt-20">
+    <!-- Bloques conectados visualmente -->
+    <div *ngFor="let item of blockchainData" class="col-lg-4 mb-4">
+      <div class="card h-100 block"> <!-- Establecer altura fija -->
+        <div class="card-header bg-dark text-white">
+          Bloque #{{ item.index }}
+        </div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Timestamp:</strong> {{ item.timestamp }}</li>
+            <li><strong>ID:</strong> {{ item.data.id }}</li>
+            <li><strong>Nom Lista:</strong> {{ item.data.nom_lista }}</li>
+            <li><strong>Descripción:</strong> {{ item.data.descripcion }}</li>
+            <li><strong>Nonce:</strong> {{ item.nonce }}</li>
+            <li><strong>Hash:</strong> {{ item.hash }}</li>
+            <li><strong>Hash Anterior:</strong> {{ item.hashAnterior }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Button section -->
+<div class="row justify-content-center mt-8 ">
+  <!-- Button to export to Excel -->
+  <div class="col-lg-12 mb-12">
+    <div class="row justify-content-end">
+      <button class="btn custom-button export-excel-button" (click)="exportarExcel()">Descargar Excel</button>
+    </div>
+  </div>
+
+  <!-- Button to export to PDF -->
+  <div class="col-lg-12 mb-12">
+    <div class="row justify-content-end">
+      <button class="btn custom-button export-pdf-button" (click)="exportToPdf()">Descargar PDF </button>
+    </div>
+  </div>
+
+  <!-- Button to download all blocks -->
+  <div class="col-lg-12 mb-12">
+    <div class="row justify-content-end">
+      <button class="btn custom-button download-all-button" (click)="descargarBloques()">Descargar JSON</button>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,50 @@
+
+
+.block {
+    border: 2px solid #333;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+.card-body{
+  padding: 10px;
+  max-height: auto;
+  overflow: auto;
+  white-space: pre-line
+}
+
+
+
+.button-section {
+  margin-bottom: 20px; /* Add margin at the bottom for spacing */
+}
+
+/* Common styling for all buttons */
+.custom-button {
+  border-radius: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 10px 15px; /* Adjust padding to make buttons closer */
+  font-size: 16px;
+}
+
+/* Style for the Export to Excel button */
+.export-excel-button {
+  background-color: #31976d; /* Blue color */
+  color: #fff; /* White text */
+  border: 2px solid #31976d; /* Matching border color */
+}
+
+/* Style for the Export to PDF button */
+.export-pdf-button {
+  background-color: #e74c3c ; /* Red color */
+  color: #fff; /* White text */
+  border: 2px solid #e74c3c ; /* Matching border color */
+}
+
+/* Style for the Download All Blocks button */
+.download-all-button {
+  background-color: #3498db ; /* Green color */
+  color: #fff; /* White text */
+  border: 2px solid #3498db ; /* Matching border color */
+}

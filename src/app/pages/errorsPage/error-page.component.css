@@ -1,0 +1,57 @@
+/* app.component.css */
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #0d93d1;
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+#logo {
+    width: 100%;
+    height: auto;
+    max-width: 200px; /* Ajusta según sea necesario */
+}
+
+main {
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#imagen-container {
+    flex: 1;
+    margin-right: 1rem;
+}
+
+#imagen-principal {
+    width: 40%;
+    height: auto;
+    max-width: 100%;
+    display: block; /* Asegura que la imagen no tenga márgenes adicionales */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+}
+
+#contenido {
+    flex: 1;
+}
+
+.punto {
+    margin-bottom: 2rem;
+}
+
+footer {
+    background-color: #0d93d1;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}

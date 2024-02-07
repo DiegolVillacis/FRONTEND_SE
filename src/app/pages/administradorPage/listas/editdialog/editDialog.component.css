@@ -1,0 +1,121 @@
+mat-form-field {
+    width: 100%;
+    margin: 15px;
+}
+
+.foto-lista {
+    font-size: 50px;
+    color: white;
+    margin-left: -30px;
+    position: relative;
+    z-index: 1;
+}
+
+.logo {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding: 50px;
+    background-color: blue;
+    z-index: 2;
+}
+
+input[type="file"] {
+    display: none;
+    position: relative;
+    z-index: 2;
+}
+
+input[type="file"] + label {
+    top: 0;
+    left: 0;
+    transition: all 500ms ease-out;
+    opacity: 0;
+    text-align: center;
+    position: absolute;
+    z-index: 1;
+}
+
+input[type="file"] + label:hover {
+    background-color: #6d6c6cb3;
+    opacity: 1;
+    cursor: pointer;
+}
+
+.btn-contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    position: relative;
+    z-index: 1;
+}
+
+.btn-contenedor figure {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-contenedor figure img {
+    width: 100%;
+    height: 100%;
+    transition: all 500ms ease-out;
+    z-index: 1;
+}
+
+@media only screen and (max-width: 600px) {
+    span {
+        background-color: white;
+        font-size: 13px;
+    }
+}
+
+.formularioRol {
+    position: relative;
+    z-index: 1;
+    border: 2px solid #333;
+    border-radius: 8px;
+}
+
+.formulario {
+    max-width: 600px;
+    border: 2px solid #333;
+    border-radius: 8px;
+}
+
+
+
+.custom-icon {
+    color: #3366ff;
+    cursor: pointer;
+}
+
+
+.inputs {
+    width: 100%;
+    top: -13.5px;
+    margin-bottom: 5px; /* Espaciado inferior opcional */
+    z-index: 10;
+    position: relative;
+    background: white;
+    
+  }
+
+  .inputstodo{
+    width: 100%;
+    top: -13.5px;
+    height: 800px;
+    margin-bottom: 25px; /* Espaciado inferior opcional */
+    z-index: 10;
+    position: relative;
+    background: white;
+    border: 2px solid #333;
+    border-radius: 8px;
+  }

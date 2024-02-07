@@ -1,0 +1,25 @@
+<div class="container" *ngIf="showVotos; else showMessageSuccess">
+    <div class="page-header text-center">
+        <h4>VOTACIONES: {{ votaciones?.descripcion_votacion }}</h4>
+        <h5>Periodo: {{ votaciones?.periodo_votacion }}</h5>
+        <span>Fecha: {{ votaciones?.fecha_votacion | date: 'fullDate' }}</span>
+    </div>
+
+    <div class="row justify-content-center align-items-center">
+        <div *ngFor="let item of votaciones?.listaestudiantil" class="col-md-4 lista-item">
+            <div class="lista-content text-center">
+                <h2>{{ item.nom_lista }}</h2>
+                <p>{{ item.descripcion }}</p>
+                <p>{{ item.nombre_candidato }}</p>
+                <img *ngIf="item.contenido !== null" src="{{ item.contenido }}" alt="Lista Image" class="img-fluid">
+
+                
+                <button mat-raised-button color="primary" (click)="saveVoto(item)" class="votar-button">VOTAR</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #showMessageSuccess>
+    <!-- Agrega aquí el contenido que deseas mostrar en caso de éxito -->
+</ng-template>

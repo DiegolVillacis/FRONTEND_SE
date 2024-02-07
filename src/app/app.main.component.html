@@ -1,0 +1,18 @@
+<mat-sidenav-container class="sidenav-container">
+
+    <mat-sidenav #drawer class="sidenav mat-elevation-z15" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
+        [opened]="(isHandset$ | async) === false" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
+
+        <app-menu-lateral></app-menu-lateral>
+
+    </mat-sidenav>
+
+    <mat-sidenav-content class="degradado">
+
+        <div class="container-fluid px-5 divp">
+            <router-outlet></router-outlet>
+        </div>
+
+    </mat-sidenav-content>
+
+</mat-sidenav-container>

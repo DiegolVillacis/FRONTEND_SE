@@ -1,0 +1,57 @@
+<app-dialog-titulo [titulo]="'Editar Proceso Electoral'" (onCerrar)="dialogRef.close( $event )"></app-dialog-titulo>
+
+
+<form novalidate [formGroup]="grupoFormulario" class="d-flex flex-wrap justify-content-center form">
+
+    <div class="d-flex bd-highlight titulo">
+        <mat-form-field class="inputs">
+            <mat-icon></mat-icon>
+            <mat-label>Ingrese Descripción</mat-label>
+            <input class="form" matInput placeholder="Consejo de la Esfot" formControlName="descripcion_votacion" maxlength="100"
+                required>
+        </mat-form-field>
+    </div>
+
+    <div class="d-flex bd-highlight titulo">
+        <mat-form-field class="inputs">
+            <mat-icon></mat-icon>
+            <mat-label>Ingrese Semestre</mat-label>
+            <input matInput mayusculas placeholder="Semestre 2020A" formControlName="periodo_votacion" maxlength="100" required>
+        </mat-form-field>
+    </div>
+
+    <div class="d-flex bd-highlight titulo">
+        <mat-form-field class="inputs">
+            <mat-icon></mat-icon>
+            <mat-label>Fecha de la elección</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="fecha_votacion" placeholder="dd/mm/aaaa" required>
+            <!-- <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle> -->
+            <mat-datepicker touchUi #picker></mat-datepicker>
+        </mat-form-field>
+    </div>
+
+    <div class="d-flex bd-highlight titulo">
+        <mat-form-field class="inputs">
+            <mat-icon></mat-icon>
+            <mat-label>Hora de Inicio</mat-label>
+            <input matInput trimKeyUp formControlName="hora_inicio" type="time" required>
+        </mat-form-field>
+    </div>
+
+    <div class="d-flex bd-highlight titulo">
+        <mat-form-field class="inputs">
+            <mat-icon></mat-icon>
+            <mat-label>Hora de Fin</mat-label>
+            <input matInput trimKeyUp formControlName="hora_final" type="time" required>
+        </mat-form-field>
+    </div>
+
+    <section class="example-section" >
+        <mat-checkbox formControlName="estado_votacion" color="primary">Activo?</mat-checkbox>
+    </section>
+
+</form>
+
+
+<app-dialog-botones [tipoAccion]="'editar'" [formulario]="grupoFormulario" (onGuardar)="Guardar( $event )"
+    (onCancelar)="LimpiarCampos()"></app-dialog-botones>

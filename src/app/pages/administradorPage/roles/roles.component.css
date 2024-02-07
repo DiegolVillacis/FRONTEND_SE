@@ -1,0 +1,67 @@
+.mat-elevation-z8 {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.cabecera-tabla {
+  background: rgb(13, 147, 209);
+  color: white;
+  text-align: center;
+  padding: 10px 0px;
+}
+
+.mat-cell, .mat-header-cell {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  padding: 8px;
+  text-align: center;
+}
+
+.inputfiltros {
+  width: 50%;
+  margin-top: -0.5rem; 
+}
+
+.formu {
+  position: relative;
+  z-index: 9;
+  margin: 0 auto; 
+}
+
+.tabla-container {
+  display: flex;
+  justify-content: center;
+}
+
+.table-container {
+  width: 50%; 
+}
+
+
+.mat-paginator-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px; 
+}
+
+
+.mat-select-panel {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  max-width: 200px; /* Ajusta según sea necesario */
+  width: auto !important;
+}
+
+
+/* Ajusta la posición del menú desplegable del paginator */
+::ng-deep .mat-select-panel {
+  margin-top: 100px !important; /* Ajusta el margen superior según sea necesario */
+  margin-left: -1000 !important;   /* Ajusta el margen izquierdo según sea necesario */
+}
+
+.table-responsive {
+  overflow-x: auto;
+}
+

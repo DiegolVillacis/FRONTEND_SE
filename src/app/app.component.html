@@ -1,0 +1,10 @@
+<div class="container" [hidden]="login">
+    <div [ngSwitch]="validarUrl(url)">
+      <div *ngSwitchDefault>
+        <app-login></app-login>
+      </div>
+    </div>
+  </div>
+  
+  <app-main class="container" [hidden]="!login"></app-main>
+  

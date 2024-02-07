@@ -1,0 +1,154 @@
+body {
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #0d93d1;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 22%;
+  /* Ajusta el valor según tus preferencias */
+}
+
+button:hover {
+  background-color: #0d93d1;
+}
+
+.material-icons {
+  margin-right: 8px;
+}
+
+
+.formularioRol {
+  position: relative;
+  z-index: 1;
+}
+
+/* Estilos CSS en tu archivo de estilos (por ejemplo, styles.scss) */
+.formulario {
+  max-width: 600px;
+  /* Ajusta según tus necesidades */
+}
+
+.inputs {
+  width: 90%;
+  /* Ajusta el ancho según tus preferencias */
+  margin-bottom: 10px;
+  /* Espaciado inferior opcional */
+}
+
+.custom-icon {
+  color: #0d93d1;
+  /* Cambia el color del ícono según tus preferencias */
+  cursor: pointer;
+  /* Agrega un cursor señalando que el ícono es interactivo */
+}
+
+.container {
+  width: 5000px;
+  height: 750px;
+}
+
+
+.regis {
+  margin: 10px auto;
+  /* Centra el botón horizontalmente */
+  display: block;
+  border: 1px solid #ccc;
+  /* Ajusta el estilo del borde según tus preferencias */
+  padding: 15px;
+}
+
+
+
+
+
+
+
+
+
+.mat-card-content {
+  background-color: white;
+}
+
+.mat-form-field {
+  background-color: white;
+}
+
+.custom-dialog {
+  background-color: white;
+}
+
+.formu {
+  position: relative;
+  z-index: 9;
+}
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.table th,
+.table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.table th {
+  background-color: #0d93d1;
+  color: white;
+}
+
+
+.agregar-votacion-container {
+  border: 1px solid #ccc;
+  /* Ajusta el estilo del borde según tus preferencias */
+  padding: 15px;
+}
+
+.btn-crear {
+  margin: 10px auto;
+  /* Centra el botón horizontalmente */
+  display: block;
+}
+
+
+
+.mat-paginator-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  /* Ajusta el margen superior según sea necesario */
+}
+
+.regis {
+  margin: 10px auto;
+  /* Centra el botón horizontalmente */
+  display: block;
+  border: 1px solid #ccc;
+  /* Ajusta el estilo del borde según tus preferencias */
+  padding: 15px;
+}
+
+

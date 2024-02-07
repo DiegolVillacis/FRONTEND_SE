@@ -1,0 +1,25 @@
+<app-dialog-titulo [titulo]="'Editar candidato'" (onCerrar)="dialogRef.close( $event )"></app-dialog-titulo>
+
+<div class="inputstodo">
+
+<form [formGroup]="CandidatosForm" class="d-flex flex-wrap justify-content-center mt-4 mb-2 inputs">
+    <mat-form-field class="inputs">
+        <mat-label>Ingrese nombres</mat-label>
+        <mat-icon></mat-icon>
+        <input matInput mayusculas placeholder="Diego" [formControl]="nombreCtrl" required>
+    </mat-form-field>
+    <mat-form-field class="inputs">
+        <mat-icon></mat-icon>
+        <mat-label>Ingrese apellidos</mat-label>
+        <input matInput mayusculas placeholder="Villacis" [formControl]="apellidoCtrl" required>
+    </mat-form-field>
+    <mat-form-field class="inputs">
+        <mat-icon></mat-icon>
+        <mat-label>Cargo</mat-label>
+        <input matInput mayusculas placeholder="Presidente" [formControl]="cargoCtrl" required>
+    </mat-form-field>
+</form>
+
+<app-dialog-botones class="inputs" [tipoAccion]="'editar'" [formulario]="CandidatosForm" (onGuardar)="Guardar( $event )" (onCancelar)="LimpiarCampos()"></app-dialog-botones>
+
+</div>

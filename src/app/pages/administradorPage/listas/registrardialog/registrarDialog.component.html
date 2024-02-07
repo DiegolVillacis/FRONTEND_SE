@@ -1,0 +1,45 @@
+<app-dialog-titulo [titulo]=" 'Registrar Lista Candidatura' "
+    (onCerrar)="dialogRef.close( $event )"></app-dialog-titulo>
+
+
+<div class="inputstodo">
+
+    <form [formGroup]="registrarListaForm">
+        <div style="text-align: center;">
+
+            <div class="d-flex flex-wrap justify-content-around inputs">
+                <div class="btn-contenedor" style="margin-top: 15px;">
+                    <figure>
+                        <img *ngIf="!imagen_default" src="../../../../../assets/imagenes/photo.png" alt="logo_default"
+                            srcset="">
+                        <img *ngIf="imagen_default" src="{{logo}}" class="img-fluid" alt="logo_empresa" srcset="">
+                        <input (change)="fileChange($event)" type="file" id="archivo" name="image"
+                            accept="image/png, image/jpeg">
+                        <label for="archivo" class="logo">
+                            <mat-icon class="foto-lista">add_a_photo</mat-icon>
+                        </label>
+                    </figure>
+                </div>
+                <div class="d-flex flex-wrap justify-content-center inputs">
+
+                    <mat-form-field class="inputs">
+                        <mat-label>Nombre Lista</mat-label>
+                        <mat-icon></mat-icon>
+                        <input matInput placeholder="UTA" [formControl]="nombre_listaCtrl" required>
+                    </mat-form-field>
+                    <mat-form-field class="inputs">
+                        <mat-icon></mat-icon>
+                        <mat-label>Descripcion</mat-label>
+                        <input matInput #message maxlength="255" placeholder="" [formControl]="descripcionCtrl"
+                            required>
+
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <app-dialog-botones [tipoAccion]="'crear'" [formulario]="registrarListaForm" (onGuardar)="GuardarLista( $event )"
+        (onCancelar)="LimpiarCampos()" class="inputs"></app-dialog-botones>
+
+</div>

@@ -1,0 +1,46 @@
+<app-dialog-titulo [titulo]="'Editar Opción Menú'" (onCerrar)="dialogRef.close( $event )"></app-dialog-titulo>
+
+<form novalidate [formGroup]="grupoFormulario" class="d-flex flex-wrap justify-content-center">
+    <mat-form-field appearance="outline">
+        <mat-label>Rol</mat-label>
+        <mat-select formControlName="id_rol" required>
+            <mat-option *ngFor="let rol of lroles" [value]="rol.id_rol">
+                {{rol.nombre_rol}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Ruta</mat-label>
+        <mat-select formControlName="cruta">
+            <mat-option *ngFor="let tran of ltransacciones" [value]="tran.direccion_operacion">
+                {{tran.direccion_operacion}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Nombre</mat-label>
+        <input matInput mayusculas placeholder="..." formControlName="nombre" >
+        <mat-icon matSuffix matTooltip="Nombre principal del menú" id="icono-style">help_outline
+        </mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Icon</mat-label>
+        <input matInput trimKeyUp placeholder="..." formControlName="icon" >
+        <mat-icon matSuffix matTooltip="Nombre icono definidos por angular material" id="icono-style">help_outline</mat-icon>
+    </mat-form-field>
+    <section class="example-section">
+        <mat-checkbox formControlName="crear" color="primary">Crear</mat-checkbox>
+    </section>
+    <section class="example-section">
+        <mat-checkbox formControlName="editar" color="primary">Editar</mat-checkbox>
+    </section>
+    <section class="example-section">
+        <mat-checkbox formControlName="eliminar" color="primary">Eliminar</mat-checkbox>
+    </section>
+    <section class="example-section">
+        <mat-checkbox formControlName="mostrarmenu" color="primary">Mostrar Menú</mat-checkbox>
+    </section>
+</form>
+
+<app-dialog-botones [tipoAccion]="'editar'" [formulario]="grupoFormulario" (onGuardar)="Guardar( $event )"
+    (onCancelar)="LimpiarCampos()"></app-dialog-botones>

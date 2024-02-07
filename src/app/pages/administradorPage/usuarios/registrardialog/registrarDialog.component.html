@@ -1,0 +1,74 @@
+
+<app-dialog-titulo [titulo]="'Registrar usuario'" (onCerrar)="dialogRef.close( $event )"></app-dialog-titulo>
+
+<div class="inputs">
+
+
+<form novalidate [formGroup]="grupoFormulario" class="d-flex flex-wrap justify-content-center mt-3 inputs">
+    <!-- <mat-form-field appearance="outline">
+        <mat-label>Username</mat-label>
+        <input matInput trimKeyUp placeholder="..." formControlName="username" maxlength="100" required>
+        <mat-icon matSuffix matTooltip="Username" id="icono-style">help_outline
+        </mat-icon>
+    </mat-form-field> -->
+    <mat-form-field class="inputs">
+        <mat-label>Nombres</mat-label>
+        <mat-icon></mat-icon>
+        <input matInput mayusculas formControlName="nombre_usuario" maxlength="150" required>
+    </mat-form-field>
+    <mat-form-field class="inputs">
+        <mat-label>Apellidos</mat-label>
+        <mat-icon></mat-icon>
+        <input matInput mayusculas formControlName="apellido_usuario" maxlength="150" required>
+    </mat-form-field>
+    <mat-form-field class="inputs">
+        <mat-label>Cédula</mat-label>
+        <mat-icon></mat-icon>
+        <input matInput trimKeyUp formControlName="cedula_usuario" maxlength="10" required>
+    </mat-form-field>
+    <mat-form-field class="inputs">
+        <mat-label>Contraseña</mat-label>
+        <button mat-icon-button matSuffix (click)="hiddenpassword = !hiddenpassword" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hiddenpassword">
+            <mat-icon>{{hiddenpassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <input matInput trimKeyUp [type]="hiddenpassword ? 'password' : 'text'" formControlName="pass_usuario"
+            maxlength="50" required>
+
+    </mat-form-field>
+    <mat-form-field class="inputs">
+        <mat-icon></mat-icon>
+        <mat-label>Email</mat-label>
+        <input matInput trimKeyUp placeholder="ejemplo@uta.edu.ec" formControlName="correo_usuario" maxlength="200"
+            required>
+        <mat-icon matSuffix matTooltip="Email de estudiante o usuario" id="icono-style">email</mat-icon>
+    </mat-form-field>
+    <mat-form-field class="inputs">
+        <mat-icon></mat-icon>
+        <mat-label>Rol</mat-label>
+
+        <div class="opcs">
+            <mat-select formControlName="rol_usuario" required>
+                <mat-option class="opc" *ngFor="let r of lroles" [value]="r.id_rol">
+                    {{r.nombre_rol}}
+                </mat-option>
+            </mat-select>
+        </div>
+        
+    </mat-form-field>
+    <div class="col-12"></div>
+    <section class="checked">
+        <mat-checkbox formControlName="matriculado" color="primary">Activo</mat-checkbox>
+    </section>
+    <section class="checked">
+        <mat-checkbox formControlName="uservoto" color="primary">Sufrago</mat-checkbox>
+    </section>
+    <section class="checked">
+        <mat-checkbox formControlName="userestudiante" color="primary">Es estudiante</mat-checkbox>
+    </section>
+</form>
+
+<app-dialog-botones [tipoAccion]="'crear'" [formulario]="grupoFormulario" (onGuardar)="Guardar( $event )"
+    (onCancelar)="LimpiarCampos()"></app-dialog-botones>
+
+</div>

@@ -1,0 +1,53 @@
+<div class="container">
+    <button type="button" [routerLink]="['/proceso-electoral']" class="btn btn-volver">
+        <i class="material-icons">arrow_back</i> Volver
+    </button>
+
+    <div class="row formu" *ngFor="let q of QueryParams">
+        <div class="col-md-6">
+            <div class="titulo">
+                <h2>Proceso Electoral: {{q.descripcion_votacion}}</h2>
+            </div>
+        </div>
+        <div class="col-md-6 proceso-info">
+            <div class="row">
+                <div class="col-md-4 info-item"><b>Fecha:</b> {{q.fecha_votacion.split("T")[0]}}</div>
+                <div class="col-md-4 info-item"><b>Estado:</b> {{q.estado_votacion}}</div>
+                <div class="col-md-4 info-item"><b>Periodo Académico:</b> {{q.periodo_votacion}}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="btn-container">
+        <div class="btn-agregar" *ngIf="Btn_Agregar">
+            <button mat-button class="btn btn-primary" (click)="dialogRegistro()">
+                <mat-icon>add_circle_outline</mat-icon> Añadir Lista
+            </button>
+        </div>
+    </div>
+
+    <div class="row listas-row" *ngIf="HabilitarCards">
+        <div class="col-md-6 col-lg-6" *ngFor="let c of listaCandidatos">
+            <div class="card mb-4">
+                <div class="card-header text-white text-center">
+                    <h4>{{c.nom_lista}}</h4>
+                </div>
+                <div class="card-body text-center">
+                    <img *ngIf="c.contenido !== null " src="{{c.contenido}}" class="img-fluid mb-3" alt="logo_empresa">
+                    <p class="descripcion">{{c.descripcion}}</p>
+                </div>
+                <div class="card-footer d-flex justify-content-around align-items-center">
+                    <a mat-button type="button" class="btn btn-outline-info"
+                        [routerLink]="['/candidatos/', c.id]"
+                        [queryParams]="{ nom_lista: c.nom_lista, estado: c.estado, descripcion: c.descripcion}"
+                        (click)="GuardarImagenLocal(c.contenido)">
+                        + Candidatos 
+                    </a>
+                    <btn-editar [registro]="c" (onEdit)="dialogEdit($event)" [label]="''"></btn-editar>
+                    <!-- <btn-eliminar [isButtom]="false" [nameTable]="'listaestudiantil'" [idreg]="c.id" [pkatributo]="'id'" (onDelete)="ngOnInit()" [label]="''"></btn-eliminar> -->
+                    <btn-eliminar [isButtom]="false" [idreg]="c.id" [nameTable]="'listaestudiantil'" [pkatributo]="'id'" (onDelete)="ngOnInit()"></btn-eliminar>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

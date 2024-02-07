@@ -1,0 +1,98 @@
+<div class="row">
+    <div class="col-lg-3" style="padding-bottom: 25px;">
+        <mat-card class="mat-elevation-z8 regis">
+            <mat-card-header>
+                <h4>Agregar Votación</h4>
+            </mat-card-header>
+            <mat-card-content class="formu">
+                <form novalidate [formGroup]="grupoFormulario" class="d-flex flex-wrap justify-content-center formu">
+                    <mat-form-field class="formu">
+                        <mat-label>Nombre</mat-label>
+                        <mat-icon></mat-icon>
+                        <input matInput placeholder="Ejemplo. FISEI UTA" formControlName="descripcion_votacion"
+                            maxlength="100" required>
+                    </mat-form-field>
+                    <mat-form-field class="formu">
+                        <mat-icon></mat-icon>
+                        <mat-label>Periodo academico</mat-label>
+                        <input matInput placeholder="Ejemplo. 2023 - 2024" formControlName="periodo_votacion"
+                            maxlength="100" required>
+                    </mat-form-field>
+
+
+                    <mat-form-field class="formu">
+                        <mat-icon></mat-icon>
+                        <mat-label>Fecha (MM/DD/AAAA)</mat-label>
+                        <input matInput [matDatepicker]="picker" formControlName="fecha_votacion"
+                            placeholder="MM/DD/AAAA" required>
+                        <!--<mat-datepicker-toggle matSuffix [for]="picker">
+                            <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+                        </mat-datepicker-toggle> -->
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+
+                    <mat-form-field style="width: 100% !important;" class="formu">
+                        <mat-icon></mat-icon>
+                        <mat-label>Hora de Inicio</mat-label>
+                        <input matInput formControlName="hora_inicio" type="time" required>
+                    </mat-form-field>
+                    <mat-form-field style="width: 100% !important;" class="formu">
+                        <mat-icon></mat-icon>
+                        <mat-label>Hora de Fin</mat-label>
+                        <input matInput formControlName="hora_final" type="time" required>
+                    </mat-form-field>
+
+
+                    <section class="example-section" class="formu">
+                        <mat-checkbox formControlName="estado_votacion" color="primary">Estado</mat-checkbox>
+                    </section>
+                </form>
+                <form-btn class="formu" [formulario]="grupoFormulario" (onGuardar)="GuardarProcesoElectoral( $event )"
+                    (onCancelar)="LimpiarCampos()"></form-btn>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div class="col-lg-8">
+        <mat-card class="mat-elevation-z8">
+
+            <div class="table-responsive">
+                <div class="cabecera-tabla">VOTACIONES</div>
+                <table class="table table-hover table-sm">
+                    <thead class="thead-light">
+                        <tr>
+                            <th style="text-align: right;" scope="col">Id</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col">Periodo</th>
+                            <th scope="col">Fecha</th>
+                            <th scope="col">Hora Fin</th>
+                            <th style="text-align: center;" scope="col">Ver / Editar / Eliminar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let reg of lregistros | procesos: filtroProcesos">
+                            <td style="text-align: right;" scope="row">{{reg.id_votacion}}</td>
+                            <td>{{reg.descripcion_votacion}}</td>
+                            <td>{{reg.estado_votacion}}</td>
+                            <td>{{reg.periodo_votacion}}</td>
+                            <td>{{reg.fecha_votacion |date: 'dd-MM-yyyy'}}</td>
+                            <td>{{reg.hora_final}}</td>
+                            <td class="d-flex justify-content-center">
+                                <a type="button" [routerLink]="['/listas/', reg.id_votacion]"
+                                    [queryParams]="{ descripcion_votacion: reg.descripcion_votacion, estado_votacion: reg.estado_votacion, periodo_votacion: reg.periodo_votacion, fecha_votacion: reg.fecha_votacion }">
+                                    <mat-icon class="icono-style color">pageview</mat-icon>
+                                </a>
+                                <btn-editar [isButtom]="false" [registro]="reg"
+                                    (onEdit)="abirDialgo( $event )"></btn-editar>
+                                <btn-eliminar [isButtom]="false" [idreg]="reg.id_votacion" [nameTable]="'votacion'"
+                                    [pkatributo]="'id_votacion'" (onDelete)="ngOnInit()"></btn-eliminar>
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </mat-card>
+    </div>
+</div>

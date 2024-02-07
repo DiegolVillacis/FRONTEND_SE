@@ -1,0 +1,19 @@
+
+
+<div class="d-flex justify-content-center" style="margin-top: 18px;">
+    
+    <div class="d-flex flex-column bd-highlight" style="margin-left: 19px; margin-top: 3px;">
+        <p class="bd-highlight" style="font-size: 18px; margin-top: -10px;"> <strong>Bienvenido</strong></p>
+        <p class="bd-highlight" style="font-size: 16px; margin-top: -20px;">{{user?.correo_usuario}}</p>
+    </div>
+
+    <div class="logout-container">
+        <button class="logout-btn" (click)="loginService.logout()">
+            <img src="../../../assets/imagenes/salida.png" alt="Logout Icon" class="logout-icon">
+        </button>
+    </div>
+
+
+
+
+</div>

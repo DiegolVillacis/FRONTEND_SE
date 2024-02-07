@@ -1,0 +1,64 @@
+/* Estilo para la sección de inicio de sesión */
+#home-section {
+    background-color: #ffff; /* Color de fondo */
+    height: 100%; /* Ocupar el 100% de la altura de la pantalla */
+    display: flex;
+    align-items: center; /* Centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+}
+
+/* Estilo para el contenedor de la tarjeta */
+.Cajas {
+    max-width: 500px; /* Ancho máximo de la tarjeta */
+}
+
+/* Estilo para la tarjeta de inicio de sesión */
+mat-card {
+    background-color: white; /* Color de fondo de la tarjeta */
+    padding: 80px; /* Espaciado interno */
+    box-shadow: 0 10px 80px rgba(0, 0, 0, 0.1); /* Sombra de la tarjeta */
+    
+}
+
+
+/* Estilo para la etiqueta h4 dentro del mat-card */
+mat-card h4 {
+    text-align: center; /* Centrar el texto */
+    margin-bottom: 20px; /* Agregar espacio inferior */
+}
+
+.input{
+    background-color: #000000;
+}
+
+/* Estilo para el formulario de inicio de sesión */
+mat-form-field {
+    width: 100%; /* Ocupar todo el ancho disponible */
+    margin-bottom: 15px; /* Agregar espacio inferior entre los campos */
+}
+
+
+
+/* Estilo para el botón de ingreso */
+.btn {
+    width: 100%; /* Ocupar todo el ancho disponible */
+    background-color: #0095ED; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    font-size: 18px; /* Tamaño del texto del botón */
+    padding: 15px; /* Espaciado interno del botón */
+    border: black; /* Sin borde */
+    cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+    border-radius: 50px; /* Bordes redondeados */
+}
+
+/* Estilo para el botón al hacer hover */
+.btn:hover {
+    background-color: #000000; /* Cambia el color de fondo al hacer hover */
+}
+
+.logo {
+    margin: 0 auto; /* Centra horizontalmente */
+    margin-bottom: 10px;
+    width: 175px; 
+}
+

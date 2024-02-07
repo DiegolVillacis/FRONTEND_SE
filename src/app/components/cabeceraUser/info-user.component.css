@@ -1,0 +1,18 @@
+.logout-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.logout-container {
+  margin-top: 0px;
+  text-align: right;
+  margin-right: 10px;
+  text-align: right;
+}
+
+.logout-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 8px;
+}

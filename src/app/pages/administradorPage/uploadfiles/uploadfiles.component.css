@@ -1,0 +1,33 @@
+
+
+.file-upload-button label {
+  display: inline-block;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: rgb(13, 147, 209); /* Cambié el color a verde */
+  color: #fff;
+  border-radius: 15px;
+  transition: background-color 0.3s ease;
+}
+
+
+.btns{
+  width: 155px;
+  height: 100px;
+  text-align: center;
+  margin-left: 20px;
+}
+
+
+.file-option:hover {
+  background-color: #d4513f; /* Cambié el color de hover a un tono más oscuro de verde */
+  color: white;
+}
+
+.file-optionsave:hover {
+  background-color: #09d35d; /* Cambié el color de hover a un tono más oscuro de verde */
+  color: white;
+}
+
+
+

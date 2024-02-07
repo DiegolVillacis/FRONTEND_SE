@@ -1,0 +1,98 @@
+.container {
+    padding: 0px;
+    background-color: #ffffff;
+}
+
+button {
+    margin: 10px;
+    font-size: 16px;
+    background-color: #0d93d1; /* Color de fondo inicial */
+    color: #ffffff; /* Color de texto inicial */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Transición suave de fondo */
+}
+
+button:hover {
+    background-color: #0d93d1;
+}
+
+.material-icons {
+    margin-right: 8px;
+    color: white;
+}
+
+.titulo {
+    color: #000000;
+    background: rgb(255, 255, 255);
+    padding: 50px 0; /* Ajuste del padding */
+}
+
+.proceso-info {
+    margin-top: 10px; /* Ajuste del margen superior */
+}
+
+.info-item {
+    margin: 10px; /* Ajuste del margen */
+    font-size: 16px; /* Ajuste del tamaño de fuente */
+}
+
+.btn-agregar {
+    display: flex;
+    justify-content: center;
+    margin: -100px 0;
+    color: white;
+}
+
+.listas-row {
+    padding-top: 25px; /* Ajuste del padding superior */
+}
+.lista-card {
+    margin-bottom: 25px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar horizontalmente */
+    justify-content: center; /* Centrar verticalmente */
+}
+
+.card-header {
+    background-color: #0d93d1;
+    color: #ffffff;
+    padding: 15px 0;
+    width: 100%;
+    text-align: center;
+}
+
+.card-body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar horizontalmente */
+    justify-content: center; /* Centrar verticalmente */
+}
+
+.descripcion {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px;
+    width: 100%;
+}
+
+
+
+
+/* Agregado estilo para el contenedor del botón */
+.btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px; /* Ajusta el margen según tus preferencias */
+}

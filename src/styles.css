@@ -1,0 +1,75 @@
+/* You can add global styles to this file, and also import other style files */
+/* html, body {
+    height: 90%;
+}
+*/
+body {
+    margin: auto;
+} 
+
+
+mat-icon {
+    cursor: pointer;
+}
+
+th, td {
+    font-size: 14px;
+}
+
+.cabecera-tabla {
+    background: rgb(13, 147, 209);
+    color: white;
+    text-align: center;
+    padding: 10px 0px;
+}
+
+.inputfiltros {
+    margin-bottom: -0.9rem;
+    width: 50%;
+}
+
+
+
+
+
+.sidenav-container {
+    height: 100%;
+    background-color: rgb(187, 26, 26);
+    
+}
+
+.sidenav {
+    width: 250px;
+    background:rgb(232, 232, 232);
+    
+}
+
+  /* .degradado {
+    background: rgb(232, 232, 232);
+    background: radial-gradient(circle, rgba(232, 232, 232, 0.8883928571428571) 0%, rgba(249, 249, 249, 1) 100%);
+    position: absolute;
+    z-index: -1;
+}  */
+
+.texcol {
+    color: aliceblue;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* .example-spacer {
+    flex: 1 1 auto;
+} */
+
+
+
+mat-form-field {
+    width: 100%;
+}
+
+/* styles.css (o tu archivo de estilos preferido) */
+::ng-deep .custom-dialog {
+    background-color: white;
+  }
+  
+

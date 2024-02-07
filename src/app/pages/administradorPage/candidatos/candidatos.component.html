@@ -1,0 +1,93 @@
+<div class="container">
+    <div class="row" *ngFor="let q of QueryParams" style="padding-bottom: 25px;">
+        <div class="col-md-5 " *ngIf="HabilitarRegistro">
+
+            <button type="button" (click)="volverPaginaAnterior()">
+                <i class="material-icons">arrow_back</i> Volver
+            </button>
+            <p></p>
+            <mat-card class="mat-elevation-z5 formu regis">
+                <mat-card-header>
+                    <h4> Registra candidato</h4>
+                </mat-card-header>
+                <mat-card-content>
+                    <form [formGroup]="CandidatosForm" class="d-flex flex-wrap justify-content-center col-md-9 formu">
+                        <mat-form-field class="formu">
+                            <mat-icon></mat-icon>
+                            <mat-label>Nombres</mat-label>
+                            <input matInput mayusculas placeholder="Diego" [formControl]="nombreCtrl" required>
+                        </mat-form-field>
+                        <mat-form-field class="formu">
+                            <mat-icon></mat-icon>
+                            <mat-label>Apellidos</mat-label>
+                            <input matInput mayusculas placeholder="Villacis" [formControl]="apellidoCtrl" required>
+                        </mat-form-field>
+                        <mat-form-field class="formu">
+                            <mat-icon></mat-icon>
+                            <mat-label>Cargo</mat-label>
+                            <input matInput mayusculas placeholder="Presidente" [formControl]="cargoCtrl" required>
+                        </mat-form-field>
+                    </form>
+                </mat-card-content>
+                <form-btn [formulario]="CandidatosForm" (onGuardar)="GuardarCandidato( $event )"
+                    (onCancelar)="LimpiarCampos()"></form-btn>
+
+            </mat-card>
+        </div>
+        <div class="col-md-7">
+            <mat-card class="mat-elevation-z8">
+                <mat-card-header>
+                    <mat-card-title>{{q.nom_lista | uppercase}}</mat-card-title>
+                </mat-card-header>
+                <img mat-card-image *ngIf="imagen_local !== null " src="{{imagen_local}}" class="img-fluid" srcset=""
+                    style="width: 50%;">
+                <mat-card-content class="d-flex flex-wrap justify-content-center">
+                    <div><b>Lista: </b> {{q.descripcion}} </div>
+                </mat-card-content>
+                <br>
+
+                <div class="col-md-29">
+                    <mat-card class="mat-elevation-z8">
+                        <div class="table-responsive">
+                            <div class="cabecera-tabla">Candidatos</div>
+                            <table class="table table-hover table-sm formu">
+                                <thead class="thead-light formu">
+                                    <tr>
+                                        <th scope="col">Código</th>
+                                        <th scope="col">Candidato</th>
+                                        <th scope="col">Cargo</th>
+                                        <th style="text-align: center;" scope="col">Editar / Eliminar</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let c of candidatos">
+                                        <td scope="row">{{c.id_candidato}}</td>
+                                        <td>{{c.candidato | titlecase}}</td>
+                                        <td>{{c.cargo_candidato}}</td>
+                                        <td class="d-flex justify-content-center">
+                                            <btn-editar [isButtom]="false" [registro]="c"
+                                                (onEdit)="abrirDialogo( $event )"></btn-editar>
+                                            <btn-eliminar [isButtom]="false" [idreg]="c.id_candidato"
+                                                [nameTable]="'candidatos'" [pkatributo]="'id_candidato'"
+                                                (onDelete)="ngOnInit()"></btn-eliminar>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="mat-paginator-container">
+                            <mat-card-actions>
+                                <mat-paginator [pageSize]="tamanio_pagina" (page)="ManejarPagina($event)" showFirstLastButtons></mat-paginator>
+
+                            </mat-card-actions>
+                        </div>
+
+
+                    </mat-card>
+                </div>
+
+            </mat-card>
+        </div>
+    </div>
+</div>

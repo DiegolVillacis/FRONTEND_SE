@@ -1,0 +1,11 @@
+<ng-container *ngIf="isButtom; then showBtn; else showIcon"></ng-container>
+
+<ng-template #showBtn>
+  <button mat-button class="btn btn-danger" (click)="openDialog()">
+    <mat-icon>delete</mat-icon> {{ label }}
+  </button>
+</ng-template>
+
+<ng-template #showIcon>
+  <mat-icon aria-hidden="false" aria-label="Eliminar" (click)="openDialog()" style="color: red;">delete_outline</mat-icon>
+</ng-template>

@@ -1,0 +1,38 @@
+.export-button-container {
+    position: fixed;
+    background-color: #217346;
+    color: white;
+    bottom: 200px;
+    width: 150px;
+    height: 40px;
+    z-index: 1;
+    display: flex;
+    align-items: center; /* Centrar verticalmente el contenido */
+    justify-content: center; /* Centrar horizontalmente el contenido */
+    border-radius: 15px; /* Ajustar el valor de acuerdo a la cantidad de redondeo deseada */
+}
+
+/* Ajusta el estilo del botón según tus preferencias */
+button {
+    min-width: 12px;
+    border: none; /* Elimina el borde del botón */
+    border-radius: 5px; /* Ajustar el valor de acuerdo a la cantidad de redondeo deseada */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+}
+
+
+  /* Estilos para centrar vertical y horizontalmente */
+.table-container-centered {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 15vh; /* Ajusta la altura según tus necesidades */
+  }
+  
+  /* Otros estilos */
+  .table-container {
+    width: 200px; /* Ajusta el ancho según tus necesidades */
+    right: 2000px;
+  }
+  

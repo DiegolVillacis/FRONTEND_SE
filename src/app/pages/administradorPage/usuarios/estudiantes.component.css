@@ -1,0 +1,86 @@
+.mat-elevation-z8 {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.cabecera-tabla {
+  background: rgb(13, 147, 209);
+  color: white;
+  text-align: center;
+  padding: 10px 0px;
+}
+
+.mat-cell,
+.mat-header-cell {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  padding: 8px;
+  text-align: center;
+}
+
+.inputfiltros {
+  width: 50%;
+  margin-top: -0.5rem;
+}
+
+.formu {
+  position: relative;
+  z-index: 9;
+  margin: 0 auto; /* Centra la tabla */
+}
+
+.btn-crear-container {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.table-container {
+  width: 70%;
+  margin: 0 auto; /* Centra la tabla */
+}
+
+
+/* Agrega estos estilos para personalizar el botón */
+.btn-crear-container {
+  text-align: center;
+  margin: 20px 0; /* Aumenté el margen para separarlo más de la tabla */
+}
+
+.btn-crear {
+  background-color:  rgb(13, 147, 209); /* Color de fondo verde */
+  color: white; /* Texto blanco */
+  padding: 10px 20px; /* Relleno del botón */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Esquinas redondeadas */
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s; /* Transición de color de fondo */
+}
+
+.btn-crear:hover {
+  background-color: #45a049; /* Cambia el color de fondo al pasar el mouse */
+}
+
+/* Estilos adicionales para centrar la tabla */
+.table-container {
+  width: 70%;
+  margin: 0 auto; /* Centra la tabla */
+}
+
+.mat-paginator-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px; /* Ajusta el margen superior según sea necesario */
+}
+
+
+
+
+.upload{
+  margin-left: auto;
+}
+
+
+
+
+

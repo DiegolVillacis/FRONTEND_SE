@@ -1,0 +1,74 @@
+<div #content class="container">
+    <div class="container" id="table-to-export">
+        <div class="row">
+            <div class="col-lg-12 text-center mb-4">
+                <h2 style="color: black;">RESULTADO ELECTORAL</h2>
+
+                <div class="d-flex justify-content-center align-items-center " style="min-height: 5vh;">
+                    <div class="col-lg-4">
+                        <p>Personas que votaron: {{ totalVotos }}</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <p>Número total de votantes: {{ numeroTotalUsuarios }}</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <p>Personas restantes: {{ numeroTotalUsuarios - totalVotos }}</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="d-flex justify-content-center align-items-center" style="min-height: 1vh;">
+
+            <!-- Tabla de total de votos para cada lista -->
+            <div class="col-lg-10">
+                <div class="table-responsive">
+
+                    <div class="table-container" style="margin-bottom: 10px;">
+                        <table class="table table-bordered text-center custom-table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">Lista</th>
+                                    <th scope="col">Votos</th>
+                                    <th scope="col">Porcentaje</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let item of results | keyvalue">
+                                    <td class="bold-text">{{ item.key }}</td>
+                                    <td>{{ item.value | number:'2.0-0' }} votos</td>
+                                    <td>
+                                        <div class="progress custom-progress">
+                                            <div class="progress-bar shiny-progress" role="progressbar"
+                                                [style.width.%]="(item.value / numeroTotalUsuarios * 100) || 0"
+                                                [style.transition]="'width 1s ease-in-out, background-color 1s ease-in-out'">
+                                            </div>
+                                            <div class="progress-text">
+                                                {{ (item.value / numeroTotalUsuarios * 100).toFixed(1) }}%
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="image-container" style="margin-top: 50px;">
+                            <canvas #chartCanvas></canvas>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="export-button-container mat-elevation-z8">
+        <button class="pdf-button" (click)="exportToPdf()">Descargar PDF</button>
+        <!-- <button class="excel-button" (click)="exportToExcel()">Descargar Excel</button> -->
+    </div>
+</div>

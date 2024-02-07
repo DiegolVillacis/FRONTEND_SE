@@ -1,0 +1,64 @@
+.mat-card-content {
+  background-color: white;
+}
+
+.mat-form-field {
+  background-color: white;
+}
+
+.custom-dialog {
+  background-color: white;
+}
+
+.formu {
+  position: relative;
+  z-index: 9;
+}
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.table th, .table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.table th {
+  background-color: #0d93d1;
+  color: white;
+}
+
+
+.agregar-votacion-container {
+  border: 1px solid #ccc; /* Ajusta el estilo del borde según tus preferencias */
+  padding: 15px;
+}
+
+.btn-crear {
+  margin: 10px auto; /* Centra el botón horizontalmente */
+  display: block;
+}
+
+
+
+.mat-paginator-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px; /* Ajusta el margen superior según sea necesario */
+}
+
+.regis{
+  margin: 10px auto; /* Centra el botón horizontalmente */
+  display: block;
+  border: 1px solid #ccc; /* Ajusta el estilo del borde según tus preferencias */
+  padding: 15px;
+}
