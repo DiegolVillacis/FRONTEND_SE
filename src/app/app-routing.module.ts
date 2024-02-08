@@ -5,7 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ErrorPageComponent } from './pages/errorsPage/error-page.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/', pathMatch: 'full'},
+  { path: '', redirectTo: '/login', pathMatch: 'full'},
 
   // Seguridad
   { path: 'opcionesmenu', loadChildren: () => import('src/app/components/opcionesmenu/opcionesmenu.module').then(m => m.OpcionesMenuModule)},
